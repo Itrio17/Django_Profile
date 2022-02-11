@@ -13,7 +13,8 @@
     <div class="col-md-8 my-auto">
         <h1><strong>Alfredo López</strong></h1>
         <h3>I am a Pyhton Developer</h3>
-        <h5 class="text-center">My name is Alfredo Lopez Garcia, I am an Engineer focused on analytics, quality processing, and hypothesis testing.
+        <h5 class="text-center">
+            My name is Alfredo Lopez Garcia, I am an Engineer focused on analytics, quality processing, and hypothesis testing.
             My experience is based on quality results, catalog management and processing time in order to avoid delays. As well, risks
             and business opportunities identification. Further, I had experience working with food companies preserving the stock quality,
             and taking care of distribution logistics for perishable products from the USA to retail companies in Mexico.
@@ -44,9 +45,9 @@
                     {% if project.url %}
 
                         <a
-                            class='btn btn-primary rounded-2 btn-sm'
+                            class='btn btn-primary rounded-2 btn-sm text-wrap'
                             href='{{project.url}}'
-                            target="_blank">{{project.url}}
+                            target="_blank">{{project.url|truncatechars:20}}
                         </a>
 
                     {% endif %}
