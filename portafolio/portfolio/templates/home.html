@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% block content%}
+
+{% load static %}
+
+<header class="row bg-black">
+
+    <div class="col-md-4">
+        <img src='{% static 'portfolio/profile.png'%}' alt='profile'>
+    </div>
+
+    <div class="col-md-8 my-auto">
+        <h1><strong>Alfredo López</strong></h1>
+        <h3>I am a Pyhton Developer</h3>
+        <p>My name is Alfredo Lopez Garcia, I am an Engineer focused on analytics, quality processing, and hypothesis testing.
+            My experience is based on quality results, catalog management and processing time in order to avoid delays. As well, risks
+            and business opportunities identification. Further, I had experience working with food companies preserving the stock quality,
+            and taking care of distribution logistics for perishable products from the USA to retail companies in Mexico.
+        </p>
+        <a href="{% static 'portfolio/Alfredo_LopezCV.pdf' %}"
+            class='btn btn-primary btn-lg rounded-0 my-3'>
+            Download CV
+        </a>
+    </div>
+</header>
+
+
+<div class="row my-4 text-center">
+
+    <h3>My Projects</h3>
+    <p>asdasdasdasdasdasdasdasdasdasda</p>
+
+    {%for project in projects%}
+        <div class="col-md-4 p-4">
+
+            <div class="card bg-black card-project">
+
+                <img src="{{project.image.url}}" alt="{{project.title}}" class="card-img-top"/>
+
+                <div class="card-body">
+
+                    <h2>{{project.title}}</h2> <p>{{project.description}}</p>
+                    {% if project.url %}
+
+                        <a
+                            class='btn btn-light rounded-0 btn-sm'
+                            href='{{project.url}}'
+                            target="_blank">{{project.url}}
+                        </a>
+
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
